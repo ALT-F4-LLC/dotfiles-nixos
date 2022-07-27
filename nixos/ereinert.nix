@@ -1,11 +1,9 @@
 { pkgs, ... }:
 
 {
-  networking.hostName = "erikreinert-work";
+  networking.hostName = "ereinert-work";
 
-  nixpkgs.overlays = [
-    (import ../shared/overlays.nix)
-  ];
+  nixpkgs.overlays = [ (import ../home-manager/overlays.nix) ];
 
   services.xserver.displayManager.autoLogin.user = "ereinert";
 
